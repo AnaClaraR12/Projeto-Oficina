@@ -1,40 +1,70 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.oficina;
 
 /**
- *
+ * Classe Peca: representa uma peça que pode ser vendida na oficina.
+ * Cada peça tem um nome e um preço. Essa classe é usada para gerenciar o estoque de peças da oficina,
+ * e pode ser utilizada para mostrar informações sobre as peças disponíveis para venda.
+ * 
  * @author Ana Clara
  */
 public class Peca {
-    private int id;
-    private String nome;
-    private int quantidade;
+    private String nome;  // Nome da peça, por exemplo, 'Pneu', 'Óleo', 'Filtro de Ar'
+    private double preco; // Preço da peça, utilizado para calcular o valor total da venda
 
-    public Peca(int id, String nome, int quantidade) {
-        this.id = id;
+    /**
+     * Construtor para criar uma nova peça.
+     * 
+     * @param nome Nome da peça (ex: "Pneu", "Óleo")
+     * @param preco Preço da peça (ex: 150.0, 50.0)
+     */
+    public Peca(String nome, double preco) {
         this.nome = nome;
-        this.quantidade = quantidade;
+        this.preco = preco;
     }
 
-    public void atualizarEstoque(int quantidade) {
-        this.quantidade += quantidade;
-    }
-
+    /**
+     * Retorna o nome da peça.
+     * 
+     * @return nome da peça
+     */
     public String getNome() {
         return nome;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    /**
+     * Define o nome da peça.
+     * 
+     * @param nome nome da peça a ser atribuído
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
+    /**
+     * Retorna o preço da peça.
+     * 
+     * @return preço da peça
+     */
+    public double getPreco() {
+        return preco;
+    }
+
+    /**
+     * Define o preço da peça.
+     * 
+     * @param preco preço a ser atribuído à peça
+     */
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    /**
+     * Retorna uma representação em string da peça, incluindo seu nome e preço.
+     * 
+     * @return uma string representando a peça, com nome e preço
+     */
     @Override
     public String toString() {
-        return nome + " (x" + quantidade + ")";
+        return "Peça: " + nome + ", Preço: R$" + String.format("%.2f", preco); // Exibe preço formatado com 2 casas decimais
     }
 }
-
-

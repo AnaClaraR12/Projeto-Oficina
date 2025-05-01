@@ -5,19 +5,56 @@
 package com.mycompany.oficina;
 
 /**
- *
+ * Classe que representa um mecânico na oficina, que herda da classe {@code Funcionario}.
+ * Além das características de um funcionário, um mecânico possui uma especialidade.
+ * 
  * @author Ana Clara
  */
-
 public class Mecanico extends Funcionario {
+    
+    /** Especialidade do mecânico, como "Mecânico de Motor", "Mecânico de Freio", etc. */
     private String especialidade;
 
-    public Mecanico(String nome, String email, String cargo, String especialidade) {
-        super(nome, email, cargo);
+    /**
+     * Construtor para a classe {@code Mecanico}.
+     * Chama o construtor da superclasse {@code Funcionario} e define a especialidade do mecânico.
+     *
+     * @param nome o nome do mecânico
+     * @param email o email do mecânico
+     * @param cargo o cargo do mecânico
+     * @param senha a senha do mecânico
+     * @param especialidade a especialidade do mecânico
+     */
+    public Mecanico(String nome, String email, String cargo, String senha, String especialidade) {
+        super(nome, email, cargo, senha); // Chama o construtor da superclasse Funcionario
         this.especialidade = especialidade;
     }
 
+    /**
+     * Método para o mecânico realizar um serviço em um veículo.
+     * 
+     * @param servico o serviço a ser realizado
+     * @param veiculo o veículo no qual o serviço será realizado
+     */
     public void realizarServico(Servico servico, Veiculo veiculo) {
         System.out.println("Serviço " + servico.toString() + " realizado no veículo: " + veiculo.toString());
+    }
+
+    /**
+     * Retorna a especialidade do mecânico.
+     *
+     * @return a especialidade do mecânico
+     */
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    /**
+     * Define a especialidade do mecânico.
+     *
+     * @param especialidade a nova especialidade do mecânico
+     */
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
     }
 }
