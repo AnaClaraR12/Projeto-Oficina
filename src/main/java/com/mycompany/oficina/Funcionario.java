@@ -11,6 +11,7 @@ import com.mycompany.oficina.seguranca.CriptografiaSenha; // Importa a classe re
  * A senha do funcionário é armazenada de forma criptografada para aumentar a segurança.
  * 
  * @author Ana Clara
+ * @version 1.0
  */
 public class Funcionario extends Usuario {
     

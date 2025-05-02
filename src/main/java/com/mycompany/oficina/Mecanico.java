@@ -9,6 +9,7 @@ package com.mycompany.oficina;
  * Além das características de um funcionário, um mecânico possui uma especialidade.
  * 
  * @author Ana Clara
+ * @version 1.0
  */
 public class Mecanico extends Funcionario {
     
@@ -27,7 +28,7 @@ public class Mecanico extends Funcionario {
      */
     public Mecanico(String nome, String email, String cargo, String senha, String especialidade) {
         super(nome, email, cargo, senha); // Chama o construtor da superclasse Funcionario
-        this.especialidade = especialidade;
+        setEspecialidade(especialidade); // Usa o setter com validação
     }
 
     /**
@@ -53,8 +54,23 @@ public class Mecanico extends Funcionario {
      * Define a especialidade do mecânico.
      *
      * @param especialidade a nova especialidade do mecânico
+     * @throws IllegalArgumentException se a especialidade for nula ou vazia
      */
     public void setEspecialidade(String especialidade) {
-        this.especialidade = especialidade;
+        if (especialidade == null || especialidade.trim().isEmpty()) {
+            throw new IllegalArgumentException("Especialidade não pode ser vazia.");
+        }
+        this.especialidade = especialidade.trim();
+    }
+
+    /**
+     * Retorna uma representação em string do mecânico,
+     * incluindo os dados do funcionário e a especialidade.
+     *
+     * @return uma string com os dados do mecânico
+     */
+    @Override
+    public String toString() {
+        return super.toString() + ", Especialidade: " + especialidade;
     }
 }

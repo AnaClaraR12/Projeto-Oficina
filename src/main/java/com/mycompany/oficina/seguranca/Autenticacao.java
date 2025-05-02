@@ -1,12 +1,4 @@
 package com.mycompany.oficina.seguranca;
-
-import com.mycompany.oficina.Funcionario;
-import com.mycompany.oficina.seguranca.Validador;
-
-
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Classe responsável pelo sistema de autenticação da oficina.
  * Permite login via funcionário (com permissões) e via email/senha (usuário genérico).
@@ -14,8 +6,18 @@ import java.util.Map;
  * 
  * Usa TipoPermissao para distinguir níveis de acesso dos funcionários.
  * 
- * @autor Ana Clara
+ * @author Ana Clara
+ * @version 1.0
  */
+import com.mycompany.oficina.Funcionario;
+import com.mycompany.oficina.seguranca.Validador;
+import com.mycompany.oficina.seguranca.TipoPermissao; 
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+
 public class Autenticacao {
     private Funcionario usuarioLogado;
     private TipoPermissao permissao;

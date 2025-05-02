@@ -1,0 +1,44 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+--release
+24
+-sourcepath
+'C:/Users/Ana Clara/Documents/NetBeansProjects/Oficina/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Ana Clara/Documents/NetBeansProjects/Oficina/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Oficina 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Oficina 1.0-SNAPSHOT API'
+com.mycompany.oficina
+com.mycompany.oficina.seguranca
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\src\main\java = 1746110687998
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\allclasses-index.html = 1746117791749
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\allpackages-index.html = 1746117791750
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\element-list = 1746117791649
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\help-doc.html = 1746117791769
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\index-all.html = 1746117791765
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\index.html = 1746117791737
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\javadoc.bat = 1746117083493
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\member-search-index.js = 1746117791754
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\module-search-index.js = 1746117791752
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\overview-summary.html = 1746117791767
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\overview-tree.html = 1746117791733
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\package-search-index.js = 1746117791753
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\search.html = 1746117791766
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\tag-search-index.js = 1746117791755
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\type-search-index.js = 1746117791754

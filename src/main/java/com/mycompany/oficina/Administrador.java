@@ -6,6 +6,7 @@ package com.mycompany.oficina;
  * Um administrador é um tipo especial de usuário que possui um nível de acesso específico.
  * 
  * @author Ana Clara
+ * @version 1.0
  */
 public class Administrador extends Usuario {
     

@@ -9,6 +9,7 @@ package com.mycompany.oficina.seguranca;
  * Contém métodos que verificam se o usuário logado tem permissão para realizar ações específicas.
  * 
  * @author Ana Clara
+ * @version 1.0
  */
 public class ControlePermissao {
 

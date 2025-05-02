@@ -6,6 +6,7 @@ package com.mycompany.oficina;
  * e pode ser utilizada para mostrar informações sobre as peças disponíveis para venda.
  * 
  * @author Ana Clara
+ * @version 1.0
  */
 public class Peca {
     private String nome;  // Nome da peça, por exemplo, 'Pneu', 'Óleo', 'Filtro de Ar'
