@@ -1,0 +1,13 @@
+com\mycompany\oficina\OrdemServico.class
+com\mycompany\oficina\Main.class
+com\mycompany\oficina\Administrador.class
+com\mycompany\oficina\Funcionario.class
+com\mycompany\oficina\RelatorioFinanceiro.class
+com\mycompany\oficina\Mecanico.class
+com\mycompany\oficina\Peca.class
+com\mycompany\oficina\Oficina.class
+com\mycompany\oficina\Veiculo.class
+com\mycompany\oficina\Servico.class
+com\mycompany\oficina\Agendamento.class
+com\mycompany\oficina\Cliente.class
+com\mycompany\oficina\Usuario.class
