@@ -7,10 +7,7 @@ package com.mycompany.oficina;
  * @version 1.0
  */
 
-import com.mycompany.oficina.Cliente;
-import com.mycompany.oficina.OrdemServico;
-import com.mycompany.oficina.Peca;
-import com.mycompany.oficina.Servico;
+
 
 import java.io.FileWriter;
 import java.io.IOException;

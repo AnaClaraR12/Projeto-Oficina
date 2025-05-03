@@ -10,8 +10,7 @@ package com.mycompany.oficina.seguranca;
  * @version 1.0
  */
 import com.mycompany.oficina.Funcionario;
-import com.mycompany.oficina.seguranca.Validador;
-import com.mycompany.oficina.seguranca.TipoPermissao; 
+ 
 
 
 import java.util.HashMap;

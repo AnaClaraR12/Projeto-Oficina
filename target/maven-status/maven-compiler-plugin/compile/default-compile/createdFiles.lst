@@ -1,4 +1,5 @@
 com\mycompany\oficina\Seguranca\TipoPermissao.class
+com\mycompany\oficina\Cliente$StatusCliente.class
 com\mycompany\oficina\Seguranca\CriptografiaSenha.class
 com\mycompany\oficina\OrdemServico.class
 com\mycompany\oficina\Main.class
@@ -12,7 +13,11 @@ com\mycompany\oficina\Oficina.class
 com\mycompany\oficina\Veiculo.class
 com\mycompany\oficina\Seguranca\ControlePermissao.class
 com\mycompany\oficina\Servico.class
+comparator\CompararAgendamentoPorNomeCliente.class
 com\mycompany\oficina\Agendamento.class
 com\mycompany\oficina\Cliente.class
+com\mycompany\oficina\Extrato.class
 com\mycompany\oficina\Seguranca\Autenticacao.class
+comparator\CompararAgendamentoPorData.class
+com\mycompany\oficina\OrdemServicoController.class
 com\mycompany\oficina\Usuario.class

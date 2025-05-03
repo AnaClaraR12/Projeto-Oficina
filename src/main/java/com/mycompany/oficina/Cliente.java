@@ -5,7 +5,8 @@
 package com.mycompany.oficina;
 
 /**
- *
+ * Representa um Cliente da oficina com dados pessoais, endereços detalhados,
+ * veículos, ordens de serviço, status e contato de emergência.
  * @author Ana Clara
  * @version 1.0
  */
@@ -14,10 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-/**
- * Representa um Cliente da oficina com dados pessoais, endereços detalhados,
- * veículos, ordens de serviço, status e contato de emergência.
- */
+
 public class Cliente {
     // Dados pessoais
     private String nome;

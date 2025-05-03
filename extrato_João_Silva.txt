@@ -1,0 +1,11 @@
+==== Extrato do Cliente ====
+Nome: João Silva
+Email: joao.silva@email.com
+Telefone: 98888-8888
+Status: PREFERENCIAL
+
+Ordem de Serviço #1
+Descrição: null
+Serviços:
+--------------------------
+TOTAL GERAL: R$ 0.0
