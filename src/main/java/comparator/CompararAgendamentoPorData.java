@@ -2,15 +2,16 @@
 
 package comparator;
 
+import com.mycompany.oficina.Agendamento;
+import java.util.Comparator;
+
 /**
  * Comparador para ordenar objetos Agendamento com base na data e hora.
  * Agendamentos mais antigos vêm primeiro.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
-import com.mycompany.oficina.Agendamento;
-import java.util.Comparator;
 
 public class CompararAgendamentoPorData implements Comparator<Agendamento> {
 

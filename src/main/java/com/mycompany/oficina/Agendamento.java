@@ -7,7 +7,7 @@ import java.util.Date;
  * Cada agendamento possui um identificador único, data e hora, cliente, veículo e funcionário associado.
  * O status pode ser "Agendado", "Cancelado" ou "Concluído".
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
 public class Agendamento {

@@ -14,7 +14,8 @@ import java.util.List;
  * 
  * Métodos para persistência em JSON ainda precisam ser implementados.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
+ * @version 1.0
  */
 public class OrdemServico {
     private int idOrdemServico; // ID da OS, único e imutável após a criação

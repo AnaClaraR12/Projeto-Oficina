@@ -8,7 +8,7 @@ package com.mycompany.oficina.seguranca;
  * Classe que centraliza a lógica de controle de permissões no sistema.
  * Contém métodos que verificam se o usuário logado tem permissão para realizar ações específicas.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
 public class ControlePermissao {

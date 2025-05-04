@@ -4,7 +4,8 @@ package com.mycompany.oficina;
  * Classe que representa um usuário genérico do sistema da oficina, contendo informações básicas
  * como nome e email. Esta classe pode ser estendida por usuários mais específicos, como clientes ou funcionários.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
+ * @version 1.0
  */
 public class Usuario {
     

@@ -1,4 +1,8 @@
 package com.mycompany.oficina;
+
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  * Classe responsável por controlar e manipular listas de ordens de serviço.
  * Fornece funcionalidades para filtragem por cliente, período e status, 
@@ -6,11 +10,9 @@ package com.mycompany.oficina;
  * 
  * Esta classe atua como uma camada de lógica entre a interface de usuário e os dados.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
-import java.util.List;
-import java.util.ArrayList;
 
 public class OrdemServicoController {
 

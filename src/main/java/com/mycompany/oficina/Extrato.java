@@ -1,17 +1,18 @@
 package com.mycompany.oficina;
-/**
- * Classe responsável por gerar e salvar o extrato de serviços e peças de um cliente.
- * Contém os dados do cliente, ordens de serviço, itens e valores.
- * 
- * @author Ana
- * @version 1.0
- */
-
 
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+
+/**
+ * Classe responsável por gerar e salvar o extrato de serviços e peças de um cliente.
+ * Contém os dados do cliente, ordens de serviço, itens e valores.
+ * 
+ * @author Ana Clara e Pedro
+ * @version 1.0
+ */
+
 
 public class Extrato {
 

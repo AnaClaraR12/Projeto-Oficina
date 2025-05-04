@@ -34,7 +34,7 @@ import java.util.List;
  * Armazena os dados em listas e possibilita a adição, remoção e listagem dessas entidades.
  * As informações podem ser persistidas em formato JSON para armazenamento permanente.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
 public class Oficina {

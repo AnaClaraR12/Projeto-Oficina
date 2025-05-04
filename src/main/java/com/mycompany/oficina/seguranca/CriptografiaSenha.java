@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
  * <p>Esta classe fornece um método estático que recebe uma senha em formato de {@code String}
  * e retorna sua representação criptografada em hexadecimal.</p>
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
 public class CriptografiaSenha {

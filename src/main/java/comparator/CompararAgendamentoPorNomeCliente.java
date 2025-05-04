@@ -1,15 +1,16 @@
 
 package comparator;
 
+import com.mycompany.oficina.Agendamento;
+import java.util.Comparator;
+
 /**
  * Comparador para ordenar objetos Agendamento com base no nome do cliente.
  * A ordenação é alfabética crescente.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
-import com.mycompany.oficina.Agendamento;
-import java.util.Comparator;
 
 public class CompararAgendamentoPorNomeCliente implements Comparator<Agendamento> {
 

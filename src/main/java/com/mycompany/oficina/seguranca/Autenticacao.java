@@ -1,14 +1,5 @@
 package com.mycompany.oficina.seguranca;
-/**
- * Classe responsável pelo sistema de autenticação da oficina.
- * Permite login via funcionário (com permissões) e via email/senha (usuário genérico).
- * Também gerencia o cadastro de usuários por email.
- * 
- * Usa TipoPermissao para distinguir níveis de acesso dos funcionários.
- * 
- * @author Ana Clara
- * @version 1.0
- */
+
 import com.mycompany.oficina.Funcionario;
  
 
@@ -16,6 +7,16 @@ import com.mycompany.oficina.Funcionario;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Classe responsável pelo sistema de autenticação da oficina.
+ * Permite login via funcionário (com permissões) e via email/senha (usuário genérico).
+ * Também gerencia o cadastro de usuários por email.
+ * 
+ * Usa TipoPermissao para distinguir níveis de acesso dos funcionários.
+ * 
+ * @author Ana Clara e Pedro
+ * @version 1.0
+ */
 
 public class Autenticacao {
     private Funcionario usuarioLogado;

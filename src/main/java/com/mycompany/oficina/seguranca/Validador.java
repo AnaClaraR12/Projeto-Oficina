@@ -10,7 +10,8 @@ package com.mycompany.oficina.seguranca;
  * Contém métodos utilitários estáticos que verificam se o e-mail está em um
  * formato válido e se a senha atende ao critério mínimo de segurança.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
+ * @version 1.0
  */
 public class Validador {
 

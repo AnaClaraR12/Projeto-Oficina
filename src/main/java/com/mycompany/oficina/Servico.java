@@ -8,7 +8,7 @@ package com.mycompany.oficina;
  * Representa um serviço oferecido pela oficina, como troca de óleo ou alinhamento.
  * Cada serviço possui um tipo e um preço associado.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
 public class Servico {

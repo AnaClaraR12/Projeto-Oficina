@@ -5,7 +5,7 @@ package com.mycompany.oficina;
  * responsável por gerenciar permissões e realizar funções administrativas avançadas.
  * Um administrador é um tipo especial de usuário que possui um nível de acesso específico.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
 public class Administrador extends Usuario {

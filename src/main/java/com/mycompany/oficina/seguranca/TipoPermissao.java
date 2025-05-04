@@ -6,7 +6,7 @@ package com.mycompany.oficina.seguranca;
  * - ACESSO_TOTAL: Permissão concedida aos administradores, permitindo acesso total a todas as funcionalidades do sistema.
  * - ACESSO_LIMITADO: Permissão concedida a funcionários comuns, permitindo acesso restrito às funcionalidades relacionadas ao seu cargo.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
 public enum TipoPermissao {

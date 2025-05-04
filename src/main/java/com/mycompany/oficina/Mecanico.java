@@ -8,7 +8,7 @@ package com.mycompany.oficina;
  * Classe que representa um mecânico na oficina, que herda da classe {@code Funcionario}.
  * Além das características de um funcionário, um mecânico possui uma especialidade.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
 public class Mecanico extends Funcionario {

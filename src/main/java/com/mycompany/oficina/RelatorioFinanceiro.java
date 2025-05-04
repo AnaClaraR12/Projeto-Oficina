@@ -10,7 +10,7 @@ package com.mycompany.oficina;
  * 
  * Permite o cálculo do lucro com base nesses dados.
  * 
- * @author Ana Clara
+ * @author Ana Clara e Pedro
  * @version 1.0
  */
 public class RelatorioFinanceiro {
