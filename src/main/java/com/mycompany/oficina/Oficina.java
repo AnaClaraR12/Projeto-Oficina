@@ -252,19 +252,19 @@ public class Oficina {
             String opcao = scanner.nextLine();
             switch (opcao) {
                 case "1":
-                    clientes.cadastrarCliente();
+                    cadastrarClienteCompleto(scanner);
                     break;
                 case "2":
                     clientes.listarClientes();
                     break;
                 case "3":
-                    clientes.buscarCliente();
+                    buscarClienteCompleto(scanner);
                     break;
                 case "4":
-                    clientes.alterarCliente();
+                    alterarClienteCompleto(scanner);
                     break;
                 case "5":
-                    clientes.removerCliente();
+                    removerClienteCompleto(scanner);
                     break;
                 case "6":
                     adicionarVeiculoCliente(scanner);
@@ -363,16 +363,16 @@ public class Oficina {
             String opcao = scanner.nextLine();
             switch (opcao) {
                 case "1":
-                    estoque.cadastrarProduto();
+                    cadastrarProdutoEstoque(scanner);
                     break;
                 case "2":
                     estoque.listarProdutos();
                     break;
                 case "3":
-                    estoque.buscarProduto();
+                    buscarProdutoEstoque(scanner);
                     break;
                 case "4":
-                    estoque.atualizarEstoque();
+                    atualizarEstoqueProduto(scanner);
                     break;
                 case "5":
                     sair = true;
@@ -907,76 +907,118 @@ public class Oficina {
     }
     
     private void gerarBalancoMensal(Scanner scanner) {
-        System.out.println("\n--- Balanço Mensal ---");
-        System.out.print("Digite o mês (1-12): ");
-        int mes = Integer.parseInt(scanner.nextLine());
-        System.out.print("Digite o ano (ex: 2025): ");
-        int ano = Integer.parseInt(scanner.nextLine());
-        List<Despesa> despesas = JsonUtil.lerLista("json/despesas.json", Despesa.class);
-        List<Venda> vendas = JsonUtil.lerLista("json/vendas.json", Venda.class);
-        double totalDespesas = 0.0;
-        if (despesas != null) {
-            for (Despesa d : despesas) {
-                if (d.getData().getMonthValue() == mes && d.getData().getYear() == ano) {
-                    totalDespesas += d.getValor();
+        try {
+            System.out.println("\n--- Balanço Mensal ---");
+            System.out.print("Digite o mês (1-12): ");
+            int mes = Integer.parseInt(scanner.nextLine());
+            if (mes < 1 || mes > 12) {
+                System.out.println("Mês inválido. Use valores de 1 a 12.");
+                return;
+            }
+            
+            System.out.print("Digite o ano (ex: 2025): ");
+            int ano = Integer.parseInt(scanner.nextLine());
+            if (ano < 2000 || ano > 2100) {
+                System.out.println("Ano inválido. Use um ano entre 2000 e 2100.");
+                return;
+            }
+            
+            // Carregar dados com tratamento de erro
+            List<Despesa> despesas = JsonUtil.lerLista("json/despesas.json", Despesa.class);
+            List<Venda> vendas = JsonUtil.lerLista("json/vendas.json", Venda.class);
+            List<OrdemServico> ordensServico = JsonUtil.lerLista("json/ordens_servico.json", OrdemServico.class);
+            
+            double totalDespesas = 0.0;
+            if (despesas != null) {
+                for (Despesa d : despesas) {
+                    try {
+                        if (d.getData().getMonthValue() == mes && d.getData().getYear() == ano) {
+                            totalDespesas += d.getValor();
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Aviso: Despesa com data inválida ignorada.");
+                    }
                 }
             }
-        }
-        double totalReceitas = 0.0;
-        
-        // Receitas de vendas de peças
-        if (vendas != null) {
-            for (Venda v : vendas) {
-                if (v.getDataHoraVenda().getMonthValue() == mes && v.getDataHoraVenda().getYear() == ano) {
-                    totalReceitas += v.getTotal();
+            
+            double totalReceitas = 0.0;
+            
+            // Receitas de vendas de peças
+            if (vendas != null) {
+                for (Venda v : vendas) {
+                    try {
+                        if (v.getDataHoraVenda().getMonthValue() == mes && v.getDataHoraVenda().getYear() == ano) {
+                            totalReceitas += v.getTotal();
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Aviso: Venda com data inválida ignorada.");
+                    }
                 }
             }
-        }
-        
-        // Receitas de ordens de serviço finalizadas/entregues
-        List<OrdemServico> ordensServico = JsonUtil.lerLista("json/ordens_servico.json", OrdemServico.class);
-        if (ordensServico != null) {
-            for (OrdemServico os : ordensServico) {
-                if (os.getDataAbertura().getMonthValue() == mes && 
-                    os.getDataAbertura().getYear() == ano &&
-                    (os.getStatus() == OrdemServico.StatusOrdemServico.FINALIZADA || 
-                     os.getStatus() == OrdemServico.StatusOrdemServico.ENTREGUE)) {
-                    totalReceitas += os.getValorTotal();
+            
+            // Receitas de ordens de serviço finalizadas/entregues
+            if (ordensServico != null) {
+                for (OrdemServico os : ordensServico) {
+                    try {
+                        if (os.getDataAbertura().getMonthValue() == mes && 
+                            os.getDataAbertura().getYear() == ano &&
+                            (os.getStatus() == OrdemServico.StatusOrdemServico.FINALIZADA || 
+                             os.getStatus() == OrdemServico.StatusOrdemServico.ENTREGUE)) {
+                            totalReceitas += os.getValorTotal();
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Aviso: Ordem de serviço com data inválida ignorada.");
+                    }
                 }
             }
-        }
-        double saldo = totalReceitas - totalDespesas;
-        
-        // Calcular receitas por categoria
-        double receitasVendas = 0.0;
-        double receitasServicos = 0.0;
-        
-        if (vendas != null) {
-            for (Venda v : vendas) {
-                if (v.getDataHoraVenda().getMonthValue() == mes && v.getDataHoraVenda().getYear() == ano) {
-                    receitasVendas += v.getTotal();
+            
+            double saldo = totalReceitas - totalDespesas;
+            
+            // Calcular receitas por categoria
+            double receitasVendas = 0.0;
+            double receitasServicos = 0.0;
+            
+            if (vendas != null) {
+                for (Venda v : vendas) {
+                    try {
+                        if (v.getDataHoraVenda().getMonthValue() == mes && v.getDataHoraVenda().getYear() == ano) {
+                            receitasVendas += v.getTotal();
+                        }
+                    } catch (Exception e) {
+                        // Ignorar vendas com problemas
+                    }
                 }
             }
-        }
-        
-        if (ordensServico != null) {
-            for (OrdemServico os : ordensServico) {
-                if (os.getDataAbertura().getMonthValue() == mes && 
-                    os.getDataAbertura().getYear() == ano &&
-                    (os.getStatus() == OrdemServico.StatusOrdemServico.FINALIZADA || 
-                     os.getStatus() == OrdemServico.StatusOrdemServico.ENTREGUE)) {
-                    receitasServicos += os.getValorTotal();
+            
+            if (ordensServico != null) {
+                for (OrdemServico os : ordensServico) {
+                    try {
+                        if (os.getDataAbertura().getMonthValue() == mes && 
+                            os.getDataAbertura().getYear() == ano &&
+                            (os.getStatus() == OrdemServico.StatusOrdemServico.FINALIZADA || 
+                             os.getStatus() == OrdemServico.StatusOrdemServico.ENTREGUE)) {
+                            receitasServicos += os.getValorTotal();
+                        }
+                    } catch (Exception e) {
+                        // Ignorar ordens com problemas
+                    }
                 }
             }
+            
+            System.out.println("\n--- DETALHAMENTO DAS RECEITAS ---");
+            System.out.printf("Receitas de vendas (peças): R$ %.2f\n", receitasVendas);
+            System.out.printf("Receitas de serviços: R$ %.2f\n", receitasServicos);
+            System.out.printf("Total de receitas: R$ %.2f\n", totalReceitas);
+            System.out.println("--------------------------------");
+            System.out.printf("Despesas do mês: R$ %.2f\n", totalDespesas);
+            System.out.printf("Saldo do mês: R$ %.2f\n", saldo);
+            
+        } catch (NumberFormatException e) {
+            System.out.println("Erro: Digite valores numéricos válidos para mês e ano.");
+        } catch (Exception e) {
+            System.out.println("Erro ao gerar balanço mensal: " + e.getMessage());
+            e.printStackTrace();
         }
-        
-        System.out.println("\n--- DETALHAMENTO DAS RECEITAS ---");
-        System.out.printf("Receitas de vendas (peças): R$ %.2f\n", receitasVendas);
-        System.out.printf("Receitas de serviços: R$ %.2f\n", receitasServicos);
-        System.out.printf("Total de receitas: R$ %.2f\n", totalReceitas);
-        System.out.println("--------------------------------");
-        System.out.printf("Despesas do mês: R$ %.2f\n", totalDespesas);
-        System.out.printf("Saldo do mês: R$ %.2f\n", saldo);
     }
     
     private void menuPonto(Scanner scanner) {
@@ -1438,6 +1480,139 @@ public class Oficina {
         }
         registrarVenda(venda);
         System.out.println("Venda registrada com sucesso!");
+    }
+
+    // Método para cadastrar produto no estoque
+    private void cadastrarProdutoEstoque(Scanner scanner) {
+        try {
+            System.out.println("\n--- Cadastro de Produto no Estoque ---");
+            System.out.print("ID da peça: ");
+            int id = Integer.parseInt(scanner.nextLine());
+            System.out.print("Nome da peça: ");
+            String nome = scanner.nextLine();
+            System.out.print("Preço: ");
+            double preco = Double.parseDouble(scanner.nextLine().replace(",", "."));
+            System.out.print("Quantidade: ");
+            int quantidade = Integer.parseInt(scanner.nextLine());
+            
+            estoque.cadastrarProduto(id, nome, preco, quantidade);
+            System.out.println("Produto cadastrado com sucesso!");
+        } catch (NumberFormatException e) {
+            System.out.println("Erro: Digite valores numéricos válidos para ID, preço e quantidade.");
+        } catch (Exception e) {
+            System.out.println("Erro ao cadastrar produto: " + e.getMessage());
+        }
+    }
+    
+    // Método para buscar produto no estoque
+    private void buscarProdutoEstoque(Scanner scanner) {
+        try {
+            System.out.println("\n--- Buscar Produto no Estoque ---");
+            System.out.print("Digite o ID da peça: ");
+            int id = Integer.parseInt(scanner.nextLine());
+            estoque.buscarProduto(id);
+        } catch (NumberFormatException e) {
+            System.out.println("Erro: Digite um ID válido (número inteiro).");
+        } catch (Exception e) {
+            System.out.println("Erro ao buscar produto: " + e.getMessage());
+        }
+    }
+    
+    // Método para atualizar estoque de produto
+    private void atualizarEstoqueProduto(Scanner scanner) {
+        try {
+            System.out.println("\n--- Atualizar Estoque ---");
+            System.out.print("Digite o ID da peça: ");
+            int id = Integer.parseInt(scanner.nextLine());
+            System.out.print("Nova quantidade: ");
+            int novaQuantidade = Integer.parseInt(scanner.nextLine());
+            
+            estoque.atualizarEstoque(id, novaQuantidade);
+            System.out.println("Estoque atualizado com sucesso!");
+        } catch (NumberFormatException e) {
+            System.out.println("Erro: Digite valores numéricos válidos para ID e quantidade.");
+        } catch (Exception e) {
+            System.out.println("Erro ao atualizar estoque: " + e.getMessage());
+        }
+    }
+    
+    // Método para cadastrar cliente completo
+    private void cadastrarClienteCompleto(Scanner scanner) {
+        try {
+            System.out.println("\n--- Cadastro de Cliente ---");
+            System.out.print("Nome: ");
+            String nome = scanner.nextLine();
+            System.out.print("CPF: ");
+            String cpf = scanner.nextLine();
+            System.out.print("CNH: ");
+            String cnh = scanner.nextLine();
+            System.out.print("Telefone: ");
+            String telefone = scanner.nextLine();
+            System.out.print("Email: ");
+            String email = scanner.nextLine();
+            System.out.print("Rua: ");
+            String rua = scanner.nextLine();
+            System.out.print("Número: ");
+            String numero = scanner.nextLine();
+            System.out.print("Cidade: ");
+            String cidade = scanner.nextLine();
+            System.out.print("Estado: ");
+            String estado = scanner.nextLine();
+            System.out.print("CEP: ");
+            String cep = scanner.nextLine();
+            System.out.print("Contato de Emergência (opcional): ");
+            String contatoEmergencia = scanner.nextLine();
+            
+            clientes.cadastrarCliente(nome, cpf, cnh, telefone, email, rua, numero, cidade, estado, cep, contatoEmergencia);
+            System.out.println("Cliente cadastrado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("Erro ao cadastrar cliente: " + e.getMessage());
+        }
+    }
+    
+    // Método para buscar cliente completo
+    private void buscarClienteCompleto(Scanner scanner) {
+        try {
+            System.out.println("\n--- Buscar Cliente ---");
+            System.out.print("Digite o CPF do cliente: ");
+            String cpf = scanner.nextLine();
+            clientes.buscarCliente(cpf);
+        } catch (Exception e) {
+            System.out.println("Erro ao buscar cliente: " + e.getMessage());
+        }
+    }
+    
+    // Método para alterar cliente completo
+    private void alterarClienteCompleto(Scanner scanner) {
+        try {
+            System.out.println("\n--- Alterar Cliente ---");
+            System.out.print("Digite o CPF do cliente: ");
+            String cpf = scanner.nextLine();
+            System.out.print("Novo telefone: ");
+            String novoTelefone = scanner.nextLine();
+            System.out.print("Novo email: ");
+            String novoEmail = scanner.nextLine();
+            System.out.print("Novo contato de emergência: ");
+            String novoContatoEmergencia = scanner.nextLine();
+            
+            clientes.alterarCliente(cpf, novoTelefone, novoEmail, novoContatoEmergencia);
+            System.out.println("Cliente alterado com sucesso!");
+        } catch (Exception e) {
+            System.out.println("Erro ao alterar cliente: " + e.getMessage());
+        }
+    }
+    
+    // Método para remover cliente completo
+    private void removerClienteCompleto(Scanner scanner) {
+        try {
+            System.out.println("\n--- Remover Cliente ---");
+            System.out.print("Digite o CPF do cliente: ");
+            String cpf = scanner.nextLine();
+            clientes.removerCliente(cpf);
+            System.out.println("Cliente removido com sucesso!");
+        } catch (Exception e) {
+            System.out.println("Erro ao remover cliente: " + e.getMessage());
+        }
     }
 
     private void menuElevadores(Scanner scanner) {
