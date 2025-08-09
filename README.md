@@ -2,7 +2,7 @@
 
 <!--Banner do Trabalho-->
 <h2 align="center" >
-  <img src="./docs/banner.png" alt="POO logo" title="POO" />
+  <img src="./BannerPOO.png" alt="POO logo" title="POO" />
 </h2>
 
 <!--Descrição do Trabalho-->
