@@ -1,0 +1,20 @@
+[
+  {
+    "nivelAcesso": 1,
+    "senhaCriptografada": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "nome": "Administrador",
+    "email": "admin@oficina.com"
+  },
+  {
+    "cargo": "Mecânico",
+    "senhaCriptografada": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "nome": "Pedro",
+    "email": "pedro@email.com"
+  },
+  {
+    "cargo": "atendente",
+    "senhaCriptografada": "75c42329b9854ca1e51f5eb87fbbc2bd3a26a017b62ebd7fc5ea22b9d19bffd3",
+    "nome": "juam",
+    "email": "ju@gmail.com"
+  }
+]

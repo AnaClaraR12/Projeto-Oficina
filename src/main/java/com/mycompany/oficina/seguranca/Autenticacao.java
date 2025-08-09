@@ -1,113 +1,199 @@
 package com.mycompany.oficina.seguranca;
 
-import com.mycompany.oficina.Funcionario;
- 
+import com.mycompany.oficina.entidade.Administrador;
+import com.mycompany.oficina.entidade.Funcionario;
 
-
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Optional;
 
 /**
  * Classe responsável pelo sistema de autenticação da oficina.
- * Permite login via funcionário (com permissões) e via email/senha (usuário genérico).
- * Também gerencia o cadastro de usuários por email.
- * 
- * Usa TipoPermissao para distinguir níveis de acesso dos funcionários.
- * 
+ * Gerencia login, logout e controle de sessão de usuários e administradores.
+ * <p>
+ * Usa {@link TipoPermissao} para distinguir níveis de acesso.
+ * É implementada como um Singleton para garantir uma única instância de autenticação no sistema.
+ *
  * @author Ana Clara e Pedro
- * @version 1.0
+ * @version 1.2 (Alterações para focar em Administrador e Funcionário, sem usuário genérico)
  */
-
 public class Autenticacao {
-    private Funcionario usuarioLogado;
-    private TipoPermissao permissao;
-    private Map<String, String> usuarios;
+    private static Autenticacao instancia;
 
-    /**
-     * Construtor que inicializa o mapa de usuários.
-     */
-    public Autenticacao() {
-        usuarios = new HashMap<>();
+    private Funcionario usuarioLogadoFuncionario;
+    
+    private Administrador usuarioLogadoAdministrador;
+
+    private TipoPermissao permissaoUsuarioLogado;
+
+    /** Referência para o serviço de gerenciamento de colaboradores, usado para buscar funcionários e administradores. */
+    private GerenciarColaboradores colaboradorService;
+
+    
+    private Autenticacao() {
+        this.colaboradorService = GerenciarColaboradores.getInstance();
+    }
+
+    
+    public static synchronized Autenticacao getInstance() {
+        if (instancia == null) {
+            instancia = new Autenticacao();
+        }
+        return instancia;
     }
 
     /**
-     * Login para funcionários registrados, com autenticação por senha e definição de permissão.
-     * @param funcionario O funcionário tentando logar
-     * @param senha A senha fornecida
-     * @return true se login for bem-sucedido, false caso contrário
+     * Tenta autenticar um administrador com base no email e senha fornecidos.
+     * Se bem-sucedido, define o administrador logado e suas permissões (ACESSO_TOTAL).
+     * Limpa qualquer outro tipo de usuário que possa estar logado.
+     *
+     * @param email O email do administrador tentando o login.
+     * @param senha A senha fornecida pelo administrador.
+     * @return {@code true} se o login for bem-sucedido, {@code false} caso contrário.
      */
-    public boolean loginFuncionario(Funcionario funcionario, String senha) {
-        if (funcionario.autenticar(senha)) {
-            usuarioLogado = funcionario;
-            permissao = funcionario.getCargo().equalsIgnoreCase("Administrador")
-                    ? TipoPermissao.ACESSO_TOTAL
-                    : TipoPermissao.ACESSO_LIMITADO;
-            return true;
+    public boolean loginAdministrador(String email, String senha) {
+        System.out.println("Tentando login de administrador para: " + email);
+        Optional<Administrador> optAdmin = colaboradorService.buscarAdministradorPorEmail(email);
+
+        if (optAdmin.isPresent()) {
+            Administrador admin = optAdmin.get();
+            System.out.println("Administrador encontrado: " + admin.getNome());
+           
+            if (admin.autenticar(senha)) {
+                this.usuarioLogadoAdministrador = admin;
+                this.usuarioLogadoFuncionario = null; 
+                this.permissaoUsuarioLogado = TipoPermissao.ACESSO_TOTAL;
+                System.out.println("Login de Administrador realizado com sucesso para: " + admin.getNome());
+                return true;
+            } else {
+                System.out.println("Senha incorreta para administrador: " + email);
+            }
+        } else {
+            System.out.println("Administrador não encontrado para email: " + email);
         }
         return false;
     }
 
     /**
-     * Login de usuário genérico via email e senha.
-     * @param email Email do usuário
-     * @param senha Senha do usuário
-     * @return true se login for bem-sucedido, false caso contrário
+     * Tenta autenticar um funcionário com base no email e senha fornecidos.
+     * Se bem-sucedido, define o funcionário logado e suas permissões (ACESSO_LIMITADO).
+     * Limpa qualquer outro tipo de usuário que possa estar logado.
+     *
+     * @param email O email do funcionário tentando o login.
+     * @param senha A senha fornecida pelo funcionário.
+     * @return {@code true} se o login for bem-sucedido, {@code false} caso contrário.
      */
-    public boolean loginEmail(String email, String senha) {
-        if (usuarios.containsKey(email) && usuarios.get(email).equals(senha)) {
-            System.out.println("Login realizado com sucesso para " + email);
-            return true;
+    public boolean loginFuncionario(String email, String senha) {
+        System.out.println("Tentando login de funcionário para: " + email);
+        Optional<Funcionario> optFuncionario = colaboradorService.buscarFuncionarioPorEmail(email);
+
+        if (optFuncionario.isPresent()) {
+            Funcionario funcionario = optFuncionario.get();
+            System.out.println("Funcionário encontrado: " + funcionario.getNome());
+            
+            if (funcionario.autenticar(senha)) {
+                this.usuarioLogadoFuncionario = funcionario;
+                this.usuarioLogadoAdministrador = null; 
+                this.permissaoUsuarioLogado = TipoPermissao.ACESSO_LIMITADO;
+                System.out.println("Login de funcionário realizado com sucesso para: " + funcionario.getNome());
+                return true;
+            } else {
+                System.out.println("Senha incorreta para funcionário: " + email);
+            }
         } else {
-            System.out.println("Login falhou para " + email);
-            return false;
+            System.out.println("Funcionário não encontrado para email: " + email);
         }
+        return false;
     }
 
     /**
-     * Cadastra um novo usuário genérico (email/senha).
-     * @param email Email do novo usuário
-     * @param senha Senha do novo usuário
-     */
-    public void cadastrarUsuario(String email, String senha) {
-        if (usuarios.containsKey(email)) {
-            System.out.println("Usuário já cadastrado!");
-        } else {
-            usuarios.put(email, senha);
-            System.out.println("Usuário cadastrado com sucesso!");
-        }
-    }
-
-    /**
-     * Verifica se o funcionário logado possui permissão total (Administrador).
-     * @return true se for admin, false se não for ou se ninguém estiver logado
-     */
-    public boolean isAdminLogado() {
-        return permissao == TipoPermissao.ACESSO_TOTAL;
-    }
-
-    /**
-     * Realiza o logout do funcionário logado.
+     * Realiza o logout do usuário atualmente logado, limpando os dados de sessão.
      */
     public void fazerLogout() {
-        usuarioLogado = null;
-        permissao = null;
+        this.usuarioLogadoFuncionario = null;
+        this.usuarioLogadoAdministrador = null;
+        this.permissaoUsuarioLogado = null;
+        System.out.println("Logout realizado.");
     }
-
-    public void alterarCargoFuncionario(Funcionario funcionario, String novoCargo) {
-    if (ControlePermissao.podeAlterarCargo(permissao)) {
-        funcionario.atualizarCargo(novoCargo);
-        System.out.println("Cargo alterado com sucesso para: " + novoCargo);
-    } else {
-        System.out.println("Permissão negada. Apenas administradores podem alterar cargos.");
-    }
-}
 
     /**
-     * Retorna o funcionário atualmente logado (se houver).
-     * @return Funcionario logado ou null
+     * Retorna o objeto do funcionário atualmente logado.
+     *
+     * @return O objeto {@link Funcionario} logado, ou {@code null} se nenhum funcionário estiver logado.
      */
-    public Funcionario getUsuarioLogado() {
-        return usuarioLogado;
+    public Funcionario getUsuarioLogadoFuncionario() {
+        return usuarioLogadoFuncionario;
+    }
+
+    /**
+     * Retorna o objeto do administrador atualmente logado.
+     *
+     * @return O objeto {@link Administrador} logado, ou {@code null} se nenhum administrador estiver logado.
+     */
+    public Administrador getUsuarioLogadoAdministrador() {
+        return usuarioLogadoAdministrador;
+    }
+
+    /**
+     * Verifica se há um funcionário atualmente logado no sistema.
+     *
+     * @return {@code true} se um funcionário estiver logado, {@code false} caso contrário.
+     */
+    public boolean isFuncionarioLogado() {
+        return this.usuarioLogadoFuncionario != null;
+    }
+
+    /**
+     * Verifica se há um administrador atualmente logado no sistema.
+     *
+     * @return {@code true} se um administrador estiver logado, {@code false} caso contrário.
+     */
+    public boolean isAdministradorLogado() { 
+        return this.usuarioLogadoAdministrador != null;
+    }
+
+    /**
+     * Retorna o tipo de permissão do usuário atualmente logado.
+     *
+     * @return O {@link TipoPermissao} do usuário logado, ou {@code null} se ninguém estiver logado.
+     */
+    public TipoPermissao getPermissaoUsuarioLogado() {
+        return permissaoUsuarioLogado;
+    }
+
+    /**
+     * Verifica se o usuário atualmente logado tem privilégios de administrador (ACESSO_TOTAL).
+     * Isso ocorre **apenas** se um {@link Administrador} estiver logado.
+     *
+     * @return {@code true} se um administrador estiver logado, {@code false} caso contrário.
+     */
+    public boolean temAcessoTotal() {
+        return this.permissaoUsuarioLogado == TipoPermissao.ACESSO_TOTAL;
+    }
+
+    /**
+     * Retorna uma representação em string do estado atual do serviço de Autenticação,
+     * indicando o usuário logado (se houver).
+     *
+     * @return Uma string descrevendo o estado da autenticação.
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Estado da Autenticação:\n");
+        if (isAdministradorLogado()) {
+            Administrador admin = getUsuarioLogadoAdministrador();
+            sb.append("  - Usuário Logado: Administrador - ").append(admin != null ? admin.getNome() : "N/A");
+        } else if (isFuncionarioLogado()) {
+            Funcionario f = getUsuarioLogadoFuncionario();
+            sb.append("  - Usuário Logado: Funcionário - ").append(f != null ? f.getNome() : "N/A");
+        } else {
+            sb.append("  - Status: Nenhum usuário logado no momento.");
+        }
+
+        if (permissaoUsuarioLogado != null && (isAdministradorLogado() || isFuncionarioLogado())) {
+            sb.append(" (Permissão: ").append(getPermissaoUsuarioLogado()).append(")\n");
+        } else { 
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }
-

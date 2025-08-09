@@ -1,0 +1,125 @@
+[
+  {
+    "pecasVendidas": [
+      {
+        "id": 1,
+        "nome": "radiador",
+        "preco": 60.0,
+        "quantidade": 1
+      }
+    ],
+    "total": 60.0,
+    "cliente": {
+      "id": "5b840e95-9dc5-41ef-9b6d-d05c8c8788c5",
+      "nome": "luiza",
+      "cpf": "12345678912",
+      "cnh": "1234567891",
+      "telefone": "33987654321",
+      "email": "lu@gmail.com",
+      "rua": "falsa",
+      "numero": "23",
+      "cidade": "minas novas",
+      "estado": "minas gerais",
+      "cep": "39100000",
+      "contatoEmergencia": "33987650207",
+      "listaVeiculos": [
+        {
+          "modelo": "ONIX",
+          "placa": "ABC1F23",
+          "anoFabricacao": 2009,
+          "ordensServico": []
+        },
+        {
+          "modelo": "ONIX",
+          "placa": "ASD1F23",
+          "anoFabricacao": 2021,
+          "ordensServico": []
+        }
+      ],
+      "ordensDeServico": [],
+      "vendas": [],
+      "status": "ATIVO"
+    },
+    "dataHoraVenda": "2025-06-30T15:54:12.8116946"
+  },
+  {
+    "pecasVendidas": [
+      {
+        "id": 6,
+        "nome": "radiador",
+        "preco": 60.0,
+        "quantidade": 2
+      }
+    ],
+    "total": 120.0,
+    "cliente": {
+      "id": "5b840e95-9dc5-41ef-9b6d-d05c8c8788c5",
+      "nome": "luiza",
+      "cpf": "12345678912",
+      "cnh": "1234567891",
+      "telefone": "33987654321",
+      "email": "lu@gmail.com",
+      "rua": "falsa",
+      "numero": "23",
+      "cidade": "minas novas",
+      "estado": "minas gerais",
+      "cep": "39100000",
+      "contatoEmergencia": "33987650207",
+      "listaVeiculos": [
+        {
+          "modelo": "ONIX",
+          "placa": "ABC1F23",
+          "anoFabricacao": 2009,
+          "ordensServico": []
+        },
+        {
+          "modelo": "ONIX",
+          "placa": "ASD1F23",
+          "anoFabricacao": 2021,
+          "ordensServico": []
+        }
+      ],
+      "ordensDeServico": [],
+      "vendas": [],
+      "status": "ATIVO"
+    },
+    "dataHoraVenda": "2025-06-30T15:54:12.8136933"
+  },
+  {
+    "pecasVendidas": [
+      {
+        "id": 8,
+        "nome": "pneu",
+        "preco": 200.0,
+        "quantidade": 1
+      }
+    ],
+    "total": 200.0,
+    "cliente": {
+      "id": "6bc5510c-2867-41ee-9900-b3c1c457c363",
+      "nome": "Marcia",
+      "cpf": "17843528443",
+      "cnh": "12345668776",
+      "telefone": "33123452165",
+      "email": "mar@gmail.com",
+      "rua": "ficticia",
+      "numero": "55",
+      "cidade": "Diamantina",
+      "estado": "Minas Gerais",
+      "cep": "39100000",
+      "contatoEmergencia": "33456789876",
+      "listaVeiculos": [
+        {
+          "modelo": "ONIX",
+          "placa": "AFG1B45",
+          "anoFabricacao": 2021,
+          "ordensServico": []
+        }
+      ],
+      "ordensDeServico": [],
+      "vendas": [],
+      "status": "ATIVO"
+    },
+    "dataHoraVenda": "2025-06-30T15:54:12.8067021"
+  }
+]

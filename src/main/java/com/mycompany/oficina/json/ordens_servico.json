@@ -1,0 +1,152 @@
+[
+  {
+    "idOrdemServico": 1,
+    "cliente": {
+      "id": "dc6d8b25-8345-4229-91a0-a5e861b54748",
+      "nome": "lucas",
+      "cpf": "98765432100",
+      "cnh": "12345867649",
+      "telefone": "33987650207",
+      "email": "lucas@gmail.com",
+      "rua": "filial",
+      "numero": "55",
+      "cidade": "diamantina",
+      "estado": "minas gerais",
+      "cep": "39100000",
+      "contatoEmergencia": "33214567899",
+      "listaVeiculos": [
+        {
+          "modelo": "ONIX",
+          "placa": "ASD1F45",
+          "anoFabricacao": 2020,
+          "ordensServico": []
+        }
+      ],
+      "ordensDeServico": [],
+      "vendas": [],
+      "status": "ATIVO"
+    },
+    "veiculo": {
+      "modelo": "ONIX",
+      "placa": "ASD1F45",
+      "anoFabricacao": 2020,
+      "ordensServico": []
+    },
+    "mecanico": {
+      "cargo": "atendente",
+      "senhaCriptografada": "75c42329b9854ca1e51f5eb87fbbc2bd3a26a017b62ebd7fc5ea22b9d19bffd3",
+      "nome": "juam",
+      "email": "ju@gmail.com"
+    },
+    "servicos": [],
+    "pecasUtilizadas": [],
+    "status": "EM_ANDAMENTO",
+    "dataAbertura": "2025-06-29T16:10:54.4062293",
+    "valorTotal": 150.0
+  },
+  {
+    "idOrdemServico": 1,
+    "cliente": {
+      "id": "dc6d8b25-8345-4229-91a0-a5e861b54748",
+      "nome": "lucas",
+      "cpf": "98765432100",
+      "cnh": "12345867649",
+      "telefone": "33987650207",
+      "email": "lucas@gmail.com",
+      "rua": "filial",
+      "numero": "55",
+      "cidade": "diamantina",
+      "estado": "minas gerais",
+      "cep": "39100000",
+      "contatoEmergencia": "33214567899",
+      "listaVeiculos": [
+        {
+          "modelo": "ONIX",
+          "placa": "ASD1F45",
+          "anoFabricacao": 2020,
+          "ordensServico": []
+        }
+      ],
+      "ordensDeServico": [],
+      "vendas": [],
+      "status": "ATIVO"
+    },
+    "veiculo": {
+      "modelo": "ONIX",
+      "placa": "ASD1F45",
+      "anoFabricacao": 2020,
+      "ordensServico": []
+    },
+    "mecanico": {
+      "cargo": "atendente",
+      "senhaCriptografada": "75c42329b9854ca1e51f5eb87fbbc2bd3a26a017b62ebd7fc5ea22b9d19bffd3",
+      "nome": "juam",
+      "email": "ju@gmail.com"
+    },
+    "servicos": [],
+    "pecasUtilizadas": [
+      {
+        "id": 6,
+        "nome": "radiador",
+        "preco": 60.0,
+        "quantidade": 1
+      }
+    ],
+    "status": "RECEBIDO",
+    "dataAbertura": "2025-06-29T16:28:55.3779152",
+    "valorTotal": 180.0
+  },
+  {
+    "idOrdemServico": 1,
+    "cliente": {
+      "id": "6bc5510c-2867-41ee-9900-b3c1c457c363",
+      "nome": "Marcia",
+      "cpf": "17843528443",
+      "cnh": "12345668776",
+      "telefone": "33123452165",
+      "email": "mar@gmail.com",
+      "rua": "ficticia",
+      "numero": "55",
+      "cidade": "Diamantina",
+      "estado": "Minas Gerais",
+      "cep": "39100000",
+      "contatoEmergencia": "33456789876",
+      "listaVeiculos": [
+        {
+          "modelo": "ONIX",
+          "placa": "AFG1B45",
+          "anoFabricacao": 2021,
+          "ordensServico": []
+        }
+      ],
+      "ordensDeServico": [],
+      "vendas": [],
+      "status": "ATIVO"
+    },
+    "veiculo": {
+      "modelo": "ONIX",
+      "placa": "AFG1B45",
+      "anoFabricacao": 2021,
+      "ordensServico": []
+    },
+    "mecanico": {
+      "cargo": "atendente",
+      "senhaCriptografada": "75c42329b9854ca1e51f5eb87fbbc2bd3a26a017b62ebd7fc5ea22b9d19bffd3",
+      "nome": "juam",
+      "email": "ju@gmail.com"
+    },
+    "servicos": [],
+    "pecasUtilizadas": [
+      {
+        "id": 6,
+        "nome": "amortecedor",
+        "preco": 300.0,
+        "quantidade": 1
+      }
+    ],
+    "status": "RECEBIDO",
+    "dataAbertura": "2025-06-30T15:44:37.5625212",
+    "descricao": "problemas no escapamento",
+    "valorTotal": 400.0
+  }
+]

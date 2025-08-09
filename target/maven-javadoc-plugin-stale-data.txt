@@ -1,21 +1,21 @@
--J-Duser.language=
--J-Duser.country=
 @options
 @packages
+-classpath
+'C:/Users/Ana Clara/.m2/repository/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar;C:/Users/Ana Clara/.m2/repository/com/google/errorprone/error_prone_annotations/2.38.0/error_prone_annotations-2.38.0.jar'
 -encoding
 'UTF-8'
 -protected
 --release
 24
 -sourcepath
-'C:/Users/Ana Clara/Documents/NetBeansProjects/Oficina/src/main/java'
+'C:/Users/Ana Clara/Documents/NetBeansProjects/Oficina-Oficial01 (9)/Oficina-Oficial01 (8)/Oficina-Oficial01/Oficina-Oficial/src/main/java;C:/Users/Ana Clara/Documents/NetBeansProjects/Oficina-Oficial01 (9)/Oficina-Oficial01 (8)/Oficina-Oficial01/Oficina-Oficial/target/generated-sources/annotations'
 -author
 -bottom
 'Copyright &#169; 2025. All rights reserved.'
 -charset
 'UTF-8'
 -d
-'C:/Users/Ana Clara/Documents/NetBeansProjects/Oficina/target/reports/apidocs'
+'C:/Users/Ana Clara/Documents/NetBeansProjects/Oficina-Oficial01 (9)/Oficina-Oficial01 (8)/Oficina-Oficial01/Oficina-Oficial/target/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
@@ -24,21 +24,27 @@
 -version
 -windowtitle
 'Oficina 1.0-SNAPSHOT API'
+com.mycompany.oficina.comparator
+com.mycompany.oficina.controller
+com.mycompany.oficina.entidade
 com.mycompany.oficina
 com.mycompany.oficina.seguranca
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\src\main\java = 1746110687998
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\allclasses-index.html = 1746117791749
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\allpackages-index.html = 1746117791750
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\element-list = 1746117791649
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\help-doc.html = 1746117791769
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\index-all.html = 1746117791765
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\index.html = 1746117791737
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\javadoc.bat = 1746117083493
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\member-search-index.js = 1746117791754
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\module-search-index.js = 1746117791752
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\overview-summary.html = 1746117791767
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\overview-tree.html = 1746117791733
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\package-search-index.js = 1746117791753
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\search.html = 1746117791766
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\tag-search-index.js = 1746117791755
-C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina\target\reports\apidocs\type-search-index.js = 1746117791754
+C:\Users\Ana Clara\.m2\repository\com\google\code\gson\gson\2.13.1\gson-2.13.1.jar = 1750706822848
+C:\Users\Ana Clara\.m2\repository\com\google\errorprone\error_prone_annotations\2.38.0\error_prone_annotations-2.38.0.jar = 1750706822882
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\src\main\java = 1750711150000
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\generated-sources\annotations = 1751139452602
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\allclasses-index.html = 1751139473067
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\allpackages-index.html = 1751139473070
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\element-list = 1751139472617
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\help-doc.html = 1751139473127
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\index-all.html = 1751139473115
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\index.html = 1751139473024
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\member-search-index.js = 1751139473077
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\module-search-index.js = 1751139473072
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\overview-summary.html = 1751139473122
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\overview-tree.html = 1751139473015
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\package-search-index.js = 1751139473073
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\search.html = 1751139473118
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\serialized-form.html = 1751139472733
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\tag-search-index.js = 1751139473078
+C:\Users\Ana Clara\Documents\NetBeansProjects\Oficina-Oficial01 (9)\Oficina-Oficial01 (8)\Oficina-Oficial01\Oficina-Oficial\target\apidocs\type-search-index.js = 1751139473074

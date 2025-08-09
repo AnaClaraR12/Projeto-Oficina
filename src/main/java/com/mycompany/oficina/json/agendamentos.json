@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "dataHora": "2025-07-05T12:00:00",
+    "status": "AGENDADO",
+    "confirmado": false,
+    "valor": 120.0,
+    "valorRetido": 0.0,
+    "cliente": {
+      "id": "6bc5510c-2867-41ee-9900-b3c1c457c363",
+      "nome": "Marcia",
+      "cpf": "17843528443",
+      "cnh": "12345668776",
+      "telefone": "33123452165",
+      "email": "mar@gmail.com",
+      "rua": "ficticia",
+      "numero": "55",
+      "cidade": "Diamantina",
+      "estado": "Minas Gerais",
+      "cep": "39100000",
+      "contatoEmergencia": "33456789876",
+      "listaVeiculos": [
+        {
+          "modelo": "ONIX",
+          "placa": "AFG1B45",
+          "anoFabricacao": 2021,
+          "ordensServico": []
+        }
+      ],
+      "ordensDeServico": [],
+      "vendas": [],
+      "status": "ATIVO"
+    },
+    "veiculo": {
+      "modelo": "ONIX",
+      "placa": "AFG1B45",
+      "anoFabricacao": 2021,
+      "ordensServico": []
+    },
+    "funcionario": {
+      "cargo": "atendente",
+      "senhaCriptografada": "75c42329b9854ca1e51f5eb87fbbc2bd3a26a017b62ebd7fc5ea22b9d19bffd3",
+      "nome": "juam",
+      "email": "ju@gmail.com"
+    }
+  }
+]

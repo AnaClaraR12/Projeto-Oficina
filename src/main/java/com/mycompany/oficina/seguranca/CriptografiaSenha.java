@@ -10,7 +10,8 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Classe responsável por realizar a criptografia de senhas utilizando o algoritmo SHA-256.
- * 
+ * Fornece métodos utilitários para criptografar senhas em formato hexadecimal.
+ *
  * <p>Esta classe fornece um método estático que recebe uma senha em formato de {@code String}
  * e retorna sua representação criptografada em hexadecimal.</p>
  * 

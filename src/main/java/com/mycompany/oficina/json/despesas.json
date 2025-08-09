@@ -1,0 +1,30 @@
+[
+  {
+    "descricao": "Café",
+    "valor": 50.0,
+    "data": "2025-07-01",
+    "categoria": "Material de uso diário",
+    "responsavel": "Administrador"
+  },
+  {
+    "descricao": "Limpeza",
+    "valor": 120.0,
+    "data": "2025-07-02",
+    "categoria": "Serviços terceirizados",
+    "responsavel": "Administrador"
+  },
+  {
+    "descricao": "produtos de limpeza",
+    "valor": 100.0,
+    "data": "2025-06-30",
+    "categoria": "limpeza",
+    "responsavel": "Administrador"
+  },
+  {
+    "descricao": "produtos de limpeza banheiro",
+    "valor": 150.0,
+    "data": "2025-06-15",
+    "categoria": "produtos",
+    "responsavel": "Administrador"
+  }
+]

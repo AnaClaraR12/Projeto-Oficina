@@ -33,6 +33,6 @@ public class ControlePermissao {
         return permissao == TipoPermissao.ACESSO_TOTAL || permissao == TipoPermissao.ACESSO_LIMITADO;
     }
 
-    // Outros métodos de permissões podem ser adicionados conforme necessário
+    
 }
 

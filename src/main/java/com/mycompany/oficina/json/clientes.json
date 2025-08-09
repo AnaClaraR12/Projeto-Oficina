@@ -1,0 +1,101 @@
+[
+  {
+    "id": "5b840e95-9dc5-41ef-9b6d-d05c8c8788c5",
+    "nome": "luiza",
+    "cpf": "12345678912",
+    "cnh": "1234567891",
+    "telefone": "33987654321",
+    "email": "lu@gmail.com",
+    "rua": "falsa",
+    "numero": "23",
+    "cidade": "minas novas",
+    "estado": "minas gerais",
+    "cep": "39100000",
+    "contatoEmergencia": "33987650207",
+    "listaVeiculos": [
+      {
+        "modelo": "ONIX",
+        "placa": "ABC1F23",
+        "anoFabricacao": 2009,
+        "ordensServico": []
+      },
+      {
+        "modelo": "ONIX",
+        "placa": "ASD1F23",
+        "anoFabricacao": 2021,
+        "ordensServico": []
+      }
+    ],
+    "ordensDeServico": [],
+    "vendas": [],
+    "status": "ATIVO"
+  },
+  {
+    "id": "dc6d8b25-8345-4229-91a0-a5e861b54748",
+    "nome": "lucas",
+    "cpf": "98765432100",
+    "cnh": "12345867649",
+    "telefone": "33987650207",
+    "email": "lucas@gmail.com",
+    "rua": "filial",
+    "numero": "55",
+    "cidade": "diamantina",
+    "estado": "minas gerais",
+    "cep": "39100000",
+    "contatoEmergencia": "33214567899",
+    "listaVeiculos": [
+      {
+        "modelo": "ONIX",
+        "placa": "ASD1F45",
+        "anoFabricacao": 2020,
+        "ordensServico": []
+      }
+    ],
+    "ordensDeServico": [],
+    "vendas": [],
+    "status": "ATIVO"
+  },
+  {
+    "id": "2a503cb7-673d-4c27-a916-358a180112f5",
+    "nome": "suzana",
+    "cpf": "56437892134",
+    "cnh": "12345678876",
+    "telefone": "33987650306",
+    "email": "su@gmail.com",
+    "rua": "bicame",
+    "numero": "21",
+    "cidade": "Diamantina",
+    "estado": "Minas Gerais",
+    "cep": "39100000",
+    "contatoEmergencia": "33987650709",
+    "listaVeiculos": [],
+    "ordensDeServico": [],
+    "vendas": [],
+    "status": "ATIVO"
+  },
+  {
+    "id": "6bc5510c-2867-41ee-9900-b3c1c457c363",
+    "nome": "Marcia",
+    "cpf": "17843528443",
+    "cnh": "12345668776",
+    "telefone": "33123452165",
+    "email": "mar@gmail.com",
+    "rua": "ficticia",
+    "numero": "55",
+    "cidade": "Diamantina",
+    "estado": "Minas Gerais",
+    "cep": "39100000",
+    "contatoEmergencia": "33456789876",
+    "listaVeiculos": [
+      {
+        "modelo": "ONIX",
+        "placa": "AFG1B45",
+        "anoFabricacao": 2021,
+        "ordensServico": []
+      }
+    ],
+    "ordensDeServico": [],
+    "vendas": [],
+    "status": "ATIVO"
+  }
+]

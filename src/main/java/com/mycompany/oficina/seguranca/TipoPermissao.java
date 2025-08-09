@@ -2,6 +2,7 @@ package com.mycompany.oficina.seguranca;
 
 /**
  * Enumeração que define os tipos de permissões de acesso para usuários da oficina.
+ * Utilizada para controle de acesso e restrição de funcionalidades no sistema.
  * 
  * - ACESSO_TOTAL: Permissão concedida aos administradores, permitindo acesso total a todas as funcionalidades do sistema.
  * - ACESSO_LIMITADO: Permissão concedida a funcionários comuns, permitindo acesso restrito às funcionalidades relacionadas ao seu cargo.

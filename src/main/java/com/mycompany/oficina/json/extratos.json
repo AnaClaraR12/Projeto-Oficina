@@ -1,0 +1,28 @@
+[
+  {
+    "idExtrato": "e1",
+    "dataEmissao": "2025-07-01",
+    "idOrdemServico": "1",
+    "idCliente": "1",
+    "nomeCliente": "João da Silva",
+    "descricaoProblemaOS": "Troca de óleo",
+    "servicosRealizados": ["Troca de óleo"],
+    "pecasUtilizadas": ["Filtro de óleo"],
+    "valorTotalServicos": 100.0,
+    "valorTotalPecas": 30.0,
+    "valorTotalExtrato": 130.0
+  },
+  {
+    "idExtrato": "e2",
+    "dataEmissao": "2025-07-02",
+    "idOrdemServico": "2",
+    "idCliente": "2",
+    "nomeCliente": "Ana Souza",
+    "descricaoProblemaOS": "Revisão geral",
+    "servicosRealizados": ["Revisão geral"],
+    "pecasUtilizadas": ["Filtro de ar"],
+    "valorTotalServicos": 200.0,
+    "valorTotalPecas": 40.0,
+    "valorTotalExtrato": 240.0
+  }
+] 
